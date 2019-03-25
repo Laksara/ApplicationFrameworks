@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="jslabsheet2.js"></script>
+    <meta charset="UTF-8">
+    <title>Lab Sheet 2</title>
+</head>
+<body>
+<h2>LAB SHEET 2</h2>
+<p>
+    1. Understand the ‘this’ keyword in JavaScript.
+    <ul>
+    <li> Declare a variable named vehicleName in the window object (var) and assign value
+        ‘Toyota’ to it. This a global variable declaration.</li>
+    <li> Declare a function named printVehicleNameOuter to print out the vehicle name. (Use
+        this.vehicleName, since the variable you declared in the above step is a global variable
+        assigned to window object. In global scope this points to window object. In the browser
+        scope global object is window object and all the global variable and function
+        declarations are assigned to window object).</li>
+    <li> Test this by printing this and window object to console. And verify that they
+        both prints window object.</li>
+    <li> Check the vehicleName and the printVehicleNameOuter you declared are in the
+        printed window object.</li>
+    <li> Call the function printVehicleNameOuter and verify it is printing ‘Toyota’.</li>
+    <li> Declare an object named Vehicle (using object literal notation ‘{}’) which have a variable
+        called vehicleName and assigned the value ‘Nissan’ to it. Declare a function named
+        printVehicleNameInner and assign printVehicleNameOuter to it.</li>
+    <li> Execute the printVehicleNameInner function and see the results.</li>
+    </ul>
+</p>
+
+<p>
+    2. Understanding JavaScript closure.
+    <ul>
+    <li>Create a function named taxCalculator which accepts the tax percentage as an
+        argument.</li>
+    <li>taxCalculator should return another function which accepts the amount as an argument
+        and returns calculated tax percentage (amount*taxPercentage/100).</li>
+    <li>Call taxCalculator function and assigned the returned value to a variable.</li>
+    <li>Now, call that variable (it is a function now) with different amounts and get tax value
+        calculated.</li>
+    <li>Notice how you have encapsulated the tax percentage and calculation from consumers.
+        Now consumers can calculate the tax percentage without the knowledge of tax
+        percentage and calculation.</li>
+    </ul>
+</p>
+<p>
+    3. Write a function to call GitHub API (https://api.github.com/users) and get users.
+    <ul>
+    <li>Try to understand the functionality of Promises.</li>
+    <li>Print all users to console.</li>
+    <li>Try to return fetched users and print it in the caller.</li>
+    </ul>
+    Notice the asynchronous execution of the JavaScript and how it is resolved using promises.
+</p>
+<p>
+    4. Classes in JavaScript
+    <ul>
+    <li>Create a class named Vehicle using a function.
+    <li>Add property named type to the class (this.type). Assign a value to that variable using a
+    constructor argument.</li>
+    <li>Add a function to its prototype named drive (Vehicle.prototype.print...). Print ‘Vehicle is
+    driving’ in the function body.</li>
+    <li>Add VehicleCount (Vehicle.VehicleCount) as a static variable.</li>
+    <li>Increase the number of VehicleCount (Vehicle.VehicleCount++) by one inside the
+    constructor.</li>
+    <li>Create an object from Vehicle class (new Vehicle) and check static variable value, type
+    property value and function works.</li>
+    <li>Create a class named Car and extend the class Vehicle (Car.prototype =
+    Object.create(Vehicle.prototype); Car.prototype.constructor = Car).
+    <li>Add a new method called balanceWheels to Car and print ‘Wheels are balanced’ in the
+    function body.</li>
+    <li>Call balanceWheels and drive methods using a car object and verify the functionality.</li>
+    <li>Check the static variable value and type variable value. Notice that they are not correct.</li>
+    <li>The reason for the above behavior is that we didn’t call the parent constructor from the
+    child class. Do this by using the call method (in Car constructor function Vehicle.call(this,
+    type);</li>
+    <li>Re-validate the values.</li>
+    </ul>
+</p>
+<p>
+    5. Declare variables using const and let keywords and observe the difference.
+</p>
+<p>
+    6. Use arrow functions.
+</p>
+<p>
+    7. Try exercise 3 with async/await.
+</p>
+<p>
+    8. Try exercise 4 class, extends, get, set and super keywords
+</p>
+</body>
+</html>
